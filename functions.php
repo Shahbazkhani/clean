@@ -55,13 +55,19 @@ function bones_ahoy() {
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
 /************* Include jQuery *************/
-
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+ if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
-   wp_enqueue_script('jquery');
-}
+   wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", false, null, true );
+   wp_register_script('jqueryui', "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js", array('jquery'), '', true );
+   wp_register_script('scrips', get_template_directory_uri().'/library/js/scripts.js', array('jqueryui'), '', true );
+   wp_register_script( 'jquery.flexslider', get_template_directory_uri().'/library/js/jquery.flexslider-min.js', array('jquery'), '', true );
+   wp_enqueue_script('jquery', true );
+   wp_enqueue_script('jqueryui');
+   if ( is_front_page() ) {wp_enqueue_script('jquery.flexslider', true );
+   }
+   
+  }
 
 
 /************* OEMBED SIZE OPTIONS *************/

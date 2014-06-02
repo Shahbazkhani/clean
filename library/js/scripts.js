@@ -13,6 +13,76 @@
 */
 
 
+jQuery(document).ready(function($) {
+    // $() will work as an alias for jQuery() inside of this function
+  
+//flexslider
+    $(window).load(function() {
+    $('#home-phone-slider').flexslider({
+          animation: "slide",
+          slideshowSpeed: 4000,
+          animationSpeed: 2000,
+          controlNav: false,
+          
+    });
+    
+    $('#home-pc-slider').flexslider({ 
+    slideshowSpeed: 4000,
+    animationSpeed: 2000
+   
+    });
+  });
+    
+    //make button with <button>
+$(function() {
+    
+  
+  $(".button").button();
+  
+  $('.a').button(
+  
+);
+
+  //toggle
+$(".a").click(function(){
+  $(".sf-vertical").slideToggle(1000);
+  $(".flexslider").toggle();
+
+  });
+
+
+
+  //Restautant Menu Accordion
+   $( "#foodmenu" ).accordion({
+          collapsible: true,
+      heightStyle: "content",
+      active: false
+        });
+  
+  
+    //Accordion
+        $( "#accordion" ).accordion({
+          collapsible: true,
+      heightStyle: "content",
+      active: false
+        });
+   //tabs
+    $( "#tabs" ).tabs({ active: 1 });
+    
+    // Hover states on the static widgets
+    $( "#dialog-link, #icons li" ).hover(
+      function() {
+        $( this ).addClass( "ui-state-hover" );
+      },
+      function() {
+        $( this ).removeClass( "ui-state-hover" );
+      }
+    );
+  });
+});
+
+
+
 /*
  * Get Viewport Dimensions
  * returns object with viewport dimensions to match css in width and height properties

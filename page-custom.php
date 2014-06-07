@@ -16,7 +16,7 @@
 <?php get_header(); ?>
 
 			<div id="content">
-Chenge page-custom.php to cearte a new template here.
+vr2-VR2
 				<div id="inner-content" class="wrap cf">
 
 						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">

@@ -4,7 +4,7 @@
 
 					
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Majid Shahbazkhani.</p>
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Majid Shahbazkhani.-vr2</p>
 
 				</div>
 
